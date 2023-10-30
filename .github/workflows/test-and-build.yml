@@ -28,6 +28,7 @@ jobs:
         run: ./gradlew --info test
 
       - name: Test report
+        if: ${{ !cancelled() }}
         uses: dorny/test-reporter@v1
         with:
           name: JUnit tests
